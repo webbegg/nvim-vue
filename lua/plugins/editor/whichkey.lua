@@ -4,6 +4,7 @@ return {
     event = "VeryLazy",
     opts = {
       plugins = { spelling = true },
+      timeout = 4000,
     },
     config = function(_, opts)
       local Util = require("lazyvim.util")

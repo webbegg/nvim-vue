@@ -27,14 +27,14 @@ local options = {
   softtabstop = 4,
 
   -- Visual --
-  number = true, -- TODO: Test if number is needed
-  relativenumber = true, -- set relative numbered lines
+  number = false, -- TODO: Test if number is needed
+  relativenumber = false, -- set relative numbered lines
   cmdheight = 1, -- more space in the neovim command line for displaying messages
   pumheight = 10, -- pop up menu height
   numberwidth = 4, -- set number column width to 2 {default 4}
   -- statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s",
   wrap = false,
-  colorcolumn = "120",
+  -- colorcolumn = "#ff0000",
   ruler = true,
   laststatus = 3, -- global statusline
   showmode = false,

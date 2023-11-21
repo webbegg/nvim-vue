@@ -88,10 +88,10 @@ return {
             },
           },
         },
-        context_commentstring = {
-          enable = true,
-          enable_autocmd = false, -- Comment.nvim takes care of this automatically
-        },
+        -- context_commentstring = {
+        --   enable = true,
+        --   enable_autocmd = false, -- Comment.nvim takes care of this automatically
+        -- },
 
         playground = {
           enable = true,

@@ -3,9 +3,9 @@ vim.bo.tabstop = 2
 vim.bo.softtabstop = 2
 
 -- special commenting for vue SFCs
-require("Comment").setup({
-  pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-})
+-- require("Comment").setup({
+--   pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+-- })
 
 --[[
 Mappings shamelessly stolen from medium article:

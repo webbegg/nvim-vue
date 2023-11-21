@@ -116,8 +116,10 @@ return {
 
         mapping = {
           -- Navigation Of Completion Menu --
-          ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item(cmp_select_opts), { "i", "c" }),
-          ["<Down>"] = cmp.mapping(cmp.mapping.select_next_item(cmp_select_opts), { "i", "c" }),
+          -- ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item(cmp_select_opts), { "i", "c" }),
+          -- ["<Down>"] = cmp.mapping(cmp.mapping.select_next_item(cmp_select_opts), { "i", "c" }),
+          ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(cmp_select_opts), { "i", "c" }),
+          ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(cmp_select_opts), { "i", "c" }),
 
           -- Scroll Docs --
           ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(5), { "i", "c" }),

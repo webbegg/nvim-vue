@@ -27,7 +27,7 @@ local options = {
   softtabstop = 4,
 
   -- Visual --
-  number = false, -- TODO: Test if number is needed
+  number = true,
   relativenumber = false, -- set relative numbered lines
   cmdheight = 1, -- more space in the neovim command line for displaying messages
   pumheight = 10, -- pop up menu height

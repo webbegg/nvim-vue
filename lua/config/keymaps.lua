@@ -144,8 +144,8 @@ if vim.fn.has("nvim-0.9.0") == 1 then
 end
 
 -- floating terminal
-map("n", "<leader>ft", function() Util.float_term(nil, { cwd = Util.get_root() }) end, { desc = "Terminal (root dir)" })
-map("n", "<leader>fT", function() Util.float_term() end, { desc = "Terminal (cwd)" })
+map("n", "<leader>ft", function() Util.terminal.open(nil, { cwd = Util.get_root() }) end, { desc = "Terminal (root dir)" })
+map("n", "<leader>fT", function() Util.terminal.open() end, { desc = "Terminal (cwd)" })
 map("t", "<esc><esc>", "<c-\\><c-n>", {desc = "Enter Normal Mode"})
 
 -- windows
@@ -163,6 +163,3 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
-
-map("n", "<C-p>", "<cmd> ChatGPT <cr>", { desc = "Chat GPT"})
-map("x", "<C-p>", "<cmd> ChatGPTEditWithInstructions <cr>", { desc = "Chat GPT"})

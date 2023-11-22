@@ -38,6 +38,17 @@ return {
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
         winblend = 0,
+        mappings = {
+          i = {
+            ["<esc>"] = require("telescope.actions").close,
+            ["<C-j>"] = require("telescope.actions").move_selection_next,
+            ["<C-k>"] = require("telescope.actions").move_selection_previous,
+            ["<C-n>"] = require("telescope.actions").cycle_history_next,
+            ["<C-p>"] = require("telescope.actions").cycle_history_prev,
+            ["<Down>"] = require("telescope.actions").move_selection_next,
+            ["<Up>"] = require("telescope.actions").move_selection_previous,
+          },
+        },
       },
     },
   },

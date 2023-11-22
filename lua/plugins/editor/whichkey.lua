@@ -4,12 +4,14 @@ return {
     event = "VeryLazy",
     opts = {
       plugins = { spelling = true },
-      timeout = 4000,
     },
     config = function(_, opts)
       local Util = require("lazyvim.util")
 
       local icons = require("config.ui.icons")
+
+      vim.o.timeout = false
+      -- vim.o.timeoutlen = 300
 
       local options = {
         active = true,

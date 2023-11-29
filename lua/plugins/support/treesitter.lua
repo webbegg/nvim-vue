@@ -26,7 +26,7 @@ return {
     config = function()
       vim.opt.foldmethod = "expr" -- use function to determine folds
       vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- use treesitter for folding
-
+      require("nvim-treesitter.install").compilers = { "cmake", "gcc", "zig" }
       require("nvim-treesitter.configs").setup({
         ensure_installed = server_list.ts_ensure_installed,
         autopairs = {

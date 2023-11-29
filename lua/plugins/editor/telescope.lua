@@ -13,6 +13,7 @@ return {
       {},
     },
     keys = {
+      { "<leader><space>", false },
       {
         "<leader>fp",
         function()
@@ -38,6 +39,9 @@ return {
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
         winblend = 0,
+        preview = {
+          hide_on_startup = false,
+        },
         mappings = {
           i = {
             ["<esc>"] = require("telescope.actions").close,
@@ -47,6 +51,7 @@ return {
             ["<C-p>"] = require("telescope.actions").cycle_history_prev,
             ["<Down>"] = require("telescope.actions").move_selection_next,
             ["<Up>"] = require("telescope.actions").move_selection_previous,
+            ["<C-h>"] = require("telescope.actions.layout").toggle_preview,
           },
         },
       },

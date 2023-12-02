@@ -14,6 +14,7 @@ return {
     },
     keys = {
       { "<leader><space>", false },
+      { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find files" },
       {
         "<leader>fp",
         function()

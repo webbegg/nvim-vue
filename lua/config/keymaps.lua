@@ -163,3 +163,26 @@ map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+
+-- buffers
+map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+map("n", "<S-tab>", "<cmd>bprevious<cr>", { desc = "Next buffer" })
+
+-- Maintain the cursor position when yanking a visual selection.
+vim.keymap.set('v', 'y', 'myy`y')
+vim.keymap.set('v', 'Y', 'myY`y')
+
+-- When text is wrapped, move by terminal rows, not lines, unless a count is provided.
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
+
+-- Paste replace visual selection without copying it.
+vim.keymap.set('v', 'p', '"_dP')
+
+-- Easy insertion of a trailing ; or , from insert mode.
+vim.keymap.set('i', ';;', '<Esc>A;<Esc>')
+vim.keymap.set('i', ',,', '<Esc>A,<Esc>')
+
+-- Easy scroll page
+vim.keymap.set('n', '<C-j>', '<C-d>')
+vim.keymap.set('n', '<C-k>', '<C-u>')

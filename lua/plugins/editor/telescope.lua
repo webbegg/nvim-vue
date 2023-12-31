@@ -40,8 +40,9 @@ return {
         layout_config = { prompt_position = "top" },
         sorting_strategy = "ascending",
         winblend = 0,
+        path_display = { "truncate" },
         preview = {
-          hide_on_startup = false,
+          hide_on_startup = true,
         },
         mappings = {
           i = {

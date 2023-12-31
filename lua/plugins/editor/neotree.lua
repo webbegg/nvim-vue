@@ -30,6 +30,7 @@ return {
         hide_hidden = false,
       },
       window = {
+        position = "float",
         mappings = {
           ["<space>"] = "none",
         },

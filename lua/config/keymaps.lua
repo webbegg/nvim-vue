@@ -169,20 +169,76 @@ map("n", "<tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<S-tab>", "<cmd>bprevious<cr>", { desc = "Next buffer" })
 
 -- Maintain the cursor position when yanking a visual selection.
-vim.keymap.set('v', 'y', 'myy`y')
-vim.keymap.set('v', 'Y', 'myY`y')
+map('v', 'y', 'myy`y')
+map('v', 'Y', 'myY`y')
 
 -- When text is wrapped, move by terminal rows, not lines, unless a count is provided.
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
+map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
+map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
 -- Paste replace visual selection without copying it.
-vim.keymap.set('v', 'p', '"_dP')
+map('v', 'p', '"_dP')
 
 -- Easy insertion of a trailing ; or , from insert mode.
-vim.keymap.set('i', ';;', '<Esc>A;<Esc>')
-vim.keymap.set('i', ',,', '<Esc>A,<Esc>')
+map('i', ';;', '<Esc>A;<Esc>')
+map('i', ',,', '<Esc>A,<Esc>')
+
+-- Close all open buffers.
+map('n', '<leader>Q', ':bufdo bdelete<CR>')
+
+-- Allow gf to open non-existent files.
+map('', 'gf', ':edit <cfile><CR>')
+
+-- Maintain the cursor position when yanking a visual selection.
+-- http://ddrscott.github.io/blog/2016/yank-without-jank/
+map('v', 'y', 'myy`y')
+map('v', 'Y', 'myY`y')
+
+-- When text is wrapped, move by terminal rows, not lines, unless a count is provided.
+map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
+map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
+
+-- Paste replace visual selection without copying it.
+map('v', 'p', '"_dP')
+
+-- Save file and exit Multiple cursors
+map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>VMClear<cr><cmd>w<cr><esc>", { desc = "Save file" })
+
+-- Easy insertion of a trailing ; or , from insert mode.
+map('i', ';;', '<Esc>A;<Esc>')
+map('i', ',,', '<Esc>A,<Esc>')
+
+-- Exit insert mode
+map('i', 'jj', '<Esc><cmd>VMClear<cr>')
 
 -- Easy scroll page
-vim.keymap.set('n', '<C-j>', '<C-d>')
-vim.keymap.set('n', '<C-k>', '<C-u>')
+map("n", "<C-k>", "<C-u>zz")
+map("n", "<C-j>", "<C-d>zz")
+map("v", "<C-k>", "<C-u>zz")
+map("v", "<C-j>", "<C-d>zz")
+
+-- Disable avpag and repag
+vim.api.nvim_set_keymap('n', '<PageUp>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<PageDown>', '<Nop>', { noremap = true, silent = true })
+
+-- Disabel cursors
+vim.api.nvim_set_keymap('n', '<Up>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Down>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Left>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Right>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Del>', '<Nop>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('v', '<Up>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<Down>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<Left>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<Right>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<Del>', '<Nop>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('i', '<Up>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<Down>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<Left>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<Right>', '<Nop>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<Del>', '<Nop>', { noremap = true, silent = true })
+
+-- Project manager
+-- map("n", "<leader>p", "<cmd>Telescope neovim-project<cr>")
